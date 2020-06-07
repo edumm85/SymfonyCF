@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Alta{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+<h1>Página para el alta/modificación de una noticia</h1>
+</div>
+<div class="row">
+<div class="col-sm-6 offset-sm-3">
+{{ form_start(formu) }}
+{{ form_widget(formu) }}
+{{ form_end(formu) }}
+</div>
+</div>
+
+{% endblock %}

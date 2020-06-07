@@ -1,0 +1,24 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+createnoticia:
+  path: /noticia/create
+  controller: App\Controller\NoticiaController::create
+
+listadonoticias:
+  path: /noticia/listado
+  controller: App\Controller\NoticiaController::listado
+
+deletenoticia:
+  path: /noticia/delete/{id}
+  controller: App\Controller\NoticiaController::delete
+
+updatenoticia:
+  path: /noticia/update/{id}
+  controller: App\Controller\NoticiaController::update
+
+detailnoticia:
+  path: /noticia/detail/{id}
+  controller: App\Controller\NoticiaController::detail
+

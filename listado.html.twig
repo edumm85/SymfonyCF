@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Listado{% endblock %}
+
+{% block body %}
+<div class="jumbotron"><h1>Listado completo de las noticias registradas</h1> </div>
+<div class="container text-right mb-3">
+<a class="btn btn-primary" href="{{ path('createnoticia') }}"><i class="far fa-plus-square"></i> Nueva</a>
+</div>
+<div class="container">
+<table class="table">
+    <thead class="table-dark text-center">
+    <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Fecha de creación</th>
+        <th>Opciones</th>
+    </tr>   
+    </thead>
+    <tbody>
+    {% for noticia in noticias %}
+    <tr class="text-center">
+        <td>{{noticia.id}}</td>
+        <td>{{noticia.titulo}}</td>
+        <td class="text-left" style="white-space: nowrap; text-overflow:Ellipsis; overflow: hidden; max-width:44px;">{{noticia.contenido}}</td>
+        <td>{{noticia.fecha|date('d-m-Y H:i:s')}}</td>
+        <td>
+            <a class="btn btn-info" href="{{ path('detailnoticia',{'id':noticia.id}) }}"><i class="fas fa-info"></i></a>
+            <a class="btn btn-primary" href="{{ path('updatenoticia',{'id':noticia.id}) }}"><i class="fas fa-pencil-alt"></i></a>
+            <a class="btn btn-danger" href="{{ path('deletenoticia',{'id':noticia.id}) }}"><i class="far fa-trash-alt"></i></a>
+        </td>
+    </tr>  
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

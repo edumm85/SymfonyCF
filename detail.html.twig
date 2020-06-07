@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Noticia {{noticia[0].id}}{% endblock %}
+
+{% block body %}
+<div class="jumbotron"><h1>Noticia {{noticia[0].id}}</h1> </div>
+<div class="container text-right mb-3">
+<a class="container-fluid" href="{{ path('listadonoticias') }}">Volver al listado <i class="fas fa-external-link-alt"></i></a>
+</div>
+<div class="container-fluid mb-3">
+<h2>{{noticia[0].titulo}}</h2>
+</div>
+<div class="container-fluid">
+<p>{{noticia[0].contenido}}</p>
+</div>
+{% endblock %}
